@@ -52,12 +52,8 @@ include $(CLEAR_VARS)
 ifeq ($(BOARD_NEEDS_MEMORYHEAPION),true)
 LOCAL_SHARED_LIBRARIES += libion_exynos
 LOCAL_CFLAGS += -DUSE_MEMORY_HEAP_ION
-ifneq ($(TARGET_SLSI_VARIANT),)
-PLATFORM_DIR := $(TARGET_BOARD_PLATFORM)-$(TARGET_SLSI_VARIANT)
-else
 PLATFORM_DIR := $(TARGET_BOARD_PLATFORM)
-endif
-LOCAL_C_INCLUDES += hardware/samsung_slsi/$(PLATFORM_DIR)/include
+LOCAL_C_INCLUDES += hardware/samsung_slsi-cm/$(PLATFORM_DIR)/include
 endif
 
 LOCAL_LDLIBS += -lpthread
@@ -72,12 +68,8 @@ include $(CLEAR_VARS)
 ifeq ($(BOARD_NEEDS_MEMORYHEAPION),true)
 LOCAL_SHARED_LIBRARIES += libion_exynos
 LOCAL_CFLAGS += -DUSE_MEMORY_HEAP_ION
-ifneq ($(TARGET_SLSI_VARIANT),)
-PLATFORM_DIR := $(TARGET_BOARD_PLATFORM)-$(TARGET_SLSI_VARIANT)
-else
 PLATFORM_DIR := $(TARGET_BOARD_PLATFORM)
-endif
-LOCAL_C_INCLUDES += hardware/samsung_slsi/$(PLATFORM_DIR)/include
+LOCAL_C_INCLUDES += hardware/samsung_slsi-cm/$(PLATFORM_DIR)/include
 endif
 
 LOCAL_LDLIBS += -lpthread
